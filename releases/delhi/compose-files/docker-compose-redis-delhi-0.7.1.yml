@@ -279,22 +279,22 @@ services:
       - data
       - command
 
-#  device-random:
-#    image: edgexfoundry/docker-device-random-go:0.7.1
-#    ports:
-#      - "49988:49988"
-#    container_name: edgex-device-random
-#    hostname: edgex-device-random
-#    networks:
-#      - edgex-network
-#    volumes:
-#      - db-data:/data/db
-#      - log-data:/edgex/logs
-#      - consul-config:/consul/config
-#      - consul-data:/consul/data
-#    depends_on:
-#      - data
-#      - command
+  device-random:
+    image: edgexfoundry/docker-device-random-go:0.7.1
+    ports:
+      - "49988:49988"
+    container_name: edgex-device-random
+    hostname: edgex-device-random
+    networks:
+      - edgex-network
+    volumes:
+      - db-data:/data/db
+      - log-data:/edgex/logs
+      - consul-config:/consul/config
+      - consul-data:/consul/data
+    depends_on:
+      - data
+      - command
 
 #  device-mqtt:
 #    image: edgexfoundry/docker-device-mqtt-go:0.7.1
